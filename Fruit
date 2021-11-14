@@ -1,0 +1,42 @@
+/*Create a base class Fruit which has name, taste and size as its attributes.
+ A method called eat() is created which describes the name of the fruit and its taste.
+Inherit the same in 2 other classes Apple and Orange and
+override the eat() method to represent each fruit taste.*/
+
+import java.util.Scanner;
+
+public class Fruit {
+    String  name;
+    String taste;
+    int size;
+    public void eat(){
+        String namef=name;
+        String tastef = taste;
+    }
+    class Apple extends Fruit {
+        @Override
+        public void eat(){
+            String namef=name;
+            String tastef = taste;
+        }
+    }
+    class Orange extends Fruit{
+        @Override
+        public void eat(){
+            String namef=name;
+            String tastef = taste;
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Fruit obj1 = new Fruit();
+        String name = sc .nextLine();
+        String taste = sc.nextLine();
+        obj1.eat();
+
+
+    }
+}
+
+
+
