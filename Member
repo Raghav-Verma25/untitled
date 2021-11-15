@@ -1,0 +1,60 @@
+/*Q3. Create a class named 'Member' having the following members:
+
+Data members
+1 - Name
+2 - Age
+3 - Phone number
+4 - Address
+5 - Salary
+It also has a method named 'printSalary' which prints the salary of the members.
+Two classes 'Employee' and 'Manager' inherits the 'Member' class. The 'Employee' and 'Manager'
+ classes have data members 'specialization' and 'department' respectively. Now, assign name,
+ age, phone number, address and salary to an employee and a manager by making an object of both
+ of these classes and print the same.*/
+
+import java.util.Scanner;
+ class Member {
+    int age ;
+    String name;
+    long phone_number;
+    int salary;
+    String address;
+    public void printSalary(){
+        System.out.println("printSalary is a method which print only salary-");
+        System.out.println(salary);
+    }
+     static class Employee extends Member{
+        String specilaization;
+
+    }
+
+    static class Manager extends Member{
+        String department;
+
+            }
+
+    public static void main(String[] args) {
+       
+        Employee emp = new Employee();
+        emp.name="adarsh";
+        emp.age=22;
+        emp.salary=50000;
+        emp.address="Agra";
+        emp.phone_number=9078565;
+        emp.specilaization="CS";
+
+        Manager man = new Manager();
+        man.name="dhruv";
+        man.age=32;
+        man.salary=90000;
+        man.address="Agra";
+        man.phone_number=9078588;
+        man.department="CS";
+
+
+
+
+
+
+    }
+}
