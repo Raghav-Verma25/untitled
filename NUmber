@@ -1,0 +1,139 @@
+/*Q9. Create class Number with only one private instance variable as a
+int primitive type. Initialize it with parameterised constructor and include
+ the following methods  isZero( ), isPositive(), isNegative( ), isOdd( ), isEven( ), isPrime(), isAmstrong()
+the above methods return boolean primitive type value.
+
+getFactorial(),  getSqr(), sumDigits()  these methods return int primitive
+ type value.
+
+dispBinary(), dispOctal(), displayhexa() these method return string value */
+import java.util.Scanner;
+
+public class Number {
+    private int x;
+    Number(int x){
+        this.x=x;
+    }
+    public boolean isZero(){
+        boolean result1 = false;
+        if(x==0){
+            result1 =true;
+        }
+
+return result1;
+    }
+
+    public boolean isPositive(){
+        boolean result2 = false;
+        if(x>0){
+        result2 = true;
+        }
+        return result2;
+    }
+
+    public boolean isNegative(){
+        boolean result3 = false;
+        if(x<0){
+            result3=true;
+        }
+        return result3;
+    }
+
+    public boolean isOdd(){
+        boolean result4 = false;
+        if(x%2==1){
+            result4= true;
+        }
+        return result4;
+    }
+
+    public boolean isEven() {
+        boolean result5 = false;
+        if (x % 2 == 0) {
+            result5 = true;
+        }
+        return result5;
+    }
+
+    public boolean isPrime(){
+        boolean result6 = false;
+        int add=0;
+        for(int i = 1 ; i < x ; i++){
+            if(x%i==0){
+                add=add+1;
+            }
+            if(add==2){
+               result6 = true ;
+            }}
+            return result6;
+    }
+    public void getFactorial() {
+        int fact = 1;
+        int y=x;
+        for (int i = 1; i<=y ; i++) {
+            fact = fact * i;
+        }
+        System.out.println(fact);
+    }
+    public void getSum(){
+        int sum =0;
+     for(int i =0 ; i<=x ; i++) {
+         sum = sum + i ;
+     }
+        System.out.println(sum);
+    }
+
+    public void getSqr(){
+        int sqr  =1;
+        for(int i =0 ; i<=x ; i++){
+            sqr = x*x;
+        }
+        System.out.println(sqr);
+    }
+
+
+            public static void main (String[] args){
+                Scanner sc = new Scanner(System.in);
+                int x = sc.nextInt();
+                Number obj = new Number(x);
+                boolean result4 = obj.isOdd();
+                if (result4 == true) {
+                    System.out.println("element found");
+                } else {
+                    System.out.println("element not found");
+                }
+
+                boolean result5 = obj.isEven();
+                if (result5 == true) {
+                    System.out.println("element found");
+                } else {
+                    System.out.println("element not found");
+                }
+
+                boolean result2 = obj.isPositive();
+                if (result2 == true) {
+                    System.out.println("element found");
+                } else {
+                    System.out.println("element not found");
+                }
+
+                boolean result3 = obj.isNegative();
+                if (result3 == true) {
+                    System.out.println("element found");
+                } else {
+                    System.out.println("element not found");
+                }
+
+                boolean result1 = obj.isZero();
+                if (result1 == true) {
+                    System.out.println("element found");
+                } else {
+                    System.out.println("element not found");
+                }
+
+                obj.getFactorial();
+                obj.getSum();
+                obj.getSqr();
+            }
+        }
+
