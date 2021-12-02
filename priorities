@@ -1,0 +1,42 @@
+/*Create three threads- with different priorities – MAX, MIN, NORM- and start the threads at the same time.
+ Observe the completion of the threads. (Thread priorities concept)*/
+
+public class Priority {
+    public static class test1 extends Thread{
+        public void run(){
+            System.out.println("this is thread class 1");
+            System.out.println(Thread.currentThread().getPriority());
+        }
+    }
+
+    public static class test2 extends Thread{
+        public void run(){
+            System.out.println("this is thread class 2");
+            System.out.println(Thread.currentThread().getPriority());
+        }
+    }
+
+    public static class test3 extends Thread{
+        public void run(){
+            System.out.println("this is thread class 3");
+            System.out.println(Thread.currentThread().getPriority());
+        }
+    }
+
+    public static void main(String[] args) {
+       // System.out.println(Thread.currentThread().getPriority());
+            test1 t1 = new test1();
+            t1.setPriority(2);
+            t1.start();
+
+
+            test2 t2 = new test2();
+            t2.setPriority(8);
+            t2.start();
+
+            test3 t3 = new test3();// by default main thread priority is 5
+            t3.start();
+
+
+    }
+}
