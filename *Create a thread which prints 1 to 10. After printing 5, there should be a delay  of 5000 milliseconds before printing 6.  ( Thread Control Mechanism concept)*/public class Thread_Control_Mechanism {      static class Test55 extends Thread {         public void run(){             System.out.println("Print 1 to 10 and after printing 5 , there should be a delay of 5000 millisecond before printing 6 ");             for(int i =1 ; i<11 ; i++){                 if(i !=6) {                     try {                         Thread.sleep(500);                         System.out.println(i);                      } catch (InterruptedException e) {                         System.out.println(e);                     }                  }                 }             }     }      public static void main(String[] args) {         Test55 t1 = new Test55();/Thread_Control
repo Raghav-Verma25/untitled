@@ -1,0 +1,29 @@
+/*Create a thread which prints 1 to 10. After printing 5, there should be a delay
+ of 5000 milliseconds before printing 6.  ( Thread Control Mechanism concept)*/
+
+public class Thread_Control_Mechanism {
+     static class Test55 extends Thread {
+        public void run(){
+            System.out.println("Print 1 to 10 and after printing 5 , there should be a delay of 5000 millisecond before printing 6 ");
+            for(int i =1 ; i<11 ; i++){
+                if(i !=6) {
+                    try {
+                        Thread.sleep(500);
+                        System.out.println(i);
+
+                    } catch (InterruptedException e) {
+                        System.out.println(e);
+                    }
+
+                }
+                }
+            }
+    }
+
+    public static void main(String[] args) {
+        Test55 t1 = new Test55();
+       // Thread th = new Thread(t1);
+        t1.start();
+
+    }
+}
