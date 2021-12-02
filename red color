@@ -1,0 +1,32 @@
+/*store colours in the form of an array
+ex: String colours[]={"white","blue","black","green","red","yellow"};
+display all colours repeatedly by generating colour index from Random class. If the random colour index matches
+to red stop display. Note: perform this task by implementing Runnabe interface*/
+
+import java.util.Random;
+public class color {
+    static class Test_color implements Runnable {
+        public void run() {
+            String color[] = {"white", "blue", "black", "green", "red", "yellow"};
+            System.out.println("array is -{white,blue ,black ,green, red, yellow}");
+            Random ran = new Random();
+
+            for (; ; ) {
+                int num = ran.nextInt(6);
+                if (num != 4) {
+                    System.out.println(color[num]);
+                }
+                if(num==4){
+                    break;
+                }
+            }
+        }
+
+        public static void main(String[] args) {
+            Test_color obj = new Test_color();
+            Thread th = new Thread(obj);
+            th.start();
+
+        }
+    }
+}
