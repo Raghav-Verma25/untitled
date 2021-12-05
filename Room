@@ -1,0 +1,58 @@
+/*Q2. Design a class Room that has properties AC_ON, HOME_THEATRE_ON,
+FAN_ON and LIGHT_ON that stores Boolean values to indicate whether the appliance
+is ON or OFF. Design a menu driven program in java that puts ON/OFF the corresponding
+appliances and gives appropriate message. If the total power consumed is more than 2kW,
+ show a message Overload. Assume AC consumes 1200 watts, Home Theatre consumes 600 watts,
+  Fan consumes 400 watts and light consumes 100 watt.*/
+
+import java.util.Scanner;
+
+public class Room {
+    boolean AC_ON;
+    boolean HOME_THEATRE_ON , FAN_ON , LIGHT_ON;
+
+    Room(){
+        this.AC_ON=AC_ON;
+        this.HOME_THEATRE_ON= HOME_THEATRE_ON;
+        this.LIGHT_ON=LIGHT_ON;
+        this.FAN_ON=FAN_ON;
+    }
+        public void display(){
+        int sum=0;
+        if(AC_ON==true){
+            sum = sum+1200;
+        }
+        if(HOME_THEATRE_ON == true){
+            sum= sum+600;
+        }
+        if(LIGHT_ON== true){
+            sum =sum +400;
+        }
+        if(FAN_ON== true){
+            sum = sum +100;
+        }
+
+        if(sum>2000){
+            System.out.println("overloading");
+        }
+        else{
+            System.out.println("not overloading");
+        }
+        }
+
+    public static void main(String[] args) {
+        System.out.println("To check whether the appliance is ON or OFF.");
+        Scanner sc= new Scanner(System.in);
+        System.out.println("AC_ON-");
+        boolean ac = sc. nextBoolean();
+        System.out.println("HOME_THEATRE_ON-");
+        boolean ht = sc. nextBoolean();
+        System.out.println("FAN_ON-");
+        boolean fn = sc. nextBoolean();
+        System.out.println("LIGHT_ON-");
+        boolean lo = sc. nextBoolean();
+        Room obj = new Room();
+        obj.display();
+    }
+}
+
