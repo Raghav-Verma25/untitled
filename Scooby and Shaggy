@@ -1,0 +1,31 @@
+/*Create two threads and assign names ‘Scooby’ and ‘Shaggy’ to the two threads.
+ Display both thread names.*/
+
+public class treading_2 {
+    public static class Scooby extends Thread{
+        public void display1(){
+            System.out.println("Scooby here......");
+        }
+    }
+    public static class Shaggy extends Thread{
+        public void display2(){
+            System.out.println("Shaggy here......");
+        }
+    }
+
+    public static void main(String[] args) {
+        Scooby s1 = new Scooby();
+        s1.start();
+        s1.setName("Scooby");
+        System.out.println(s1.getName());
+
+        //Shaggy
+        Shaggy s2 = new Shaggy();
+        s2.start();
+        s2.setName("Shaggy");
+        System.out.println(s2.getName());
+
+    }
+
+
+}
