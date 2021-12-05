@@ -1,0 +1,36 @@
+package com.company;
+import java.util.Scanner;
+class Palindrome{
+    int num;
+    Palindrome(int temp){
+        num = temp;
+    }
+    public void pali(){
+        int c;
+        int r , pal=0;
+        c=num;
+        while(c>0){
+             r=c%10;
+            pal = pal*10 +r;
+            c=c/10;
+        }
+        if(num==pal){
+            System.out.println("number is palindrome");
+        }
+        else{
+            System.out.println("number is not palindrome");
+        }
+    }
+
+}
+
+public class practise_question {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in) ;
+        int temp = sc.nextInt();
+        System.out.println("enter a number-");
+        Palindrome p = new Palindrome(temp);
+        p.pali();
+
+    }
+}
