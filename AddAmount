@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class AddAmount {
+
+    int amount=50;
+    //int add_amount;
+    AddAmount(){
+
+    }
+    AddAmount(int amount1){
+    this.amount= this.amount + amount1 ;
+    }
+    public void display(){
+        System.out.println(amount);
+    }
+
+    public static void main(String[] args) {
+        System.out.println("enter a amount to be added-");
+        Scanner sc = new Scanner(System.in);
+        int add_amount = sc.nextInt();
+        AddAmount obj3 =new AddAmount(add_amount);
+        obj3.display();
+
+
+    }
+}
