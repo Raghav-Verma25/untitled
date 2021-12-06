@@ -1,0 +1,44 @@
+/* Q2. At GLA College of  Programming, the final school fees to be paid is calculated as follows.
+• Original Fees should be greater than or equal to R50 000
+• Minimum fixed deposit of R10 000
+• If a deposit is greater than equal to half the original fees, you get a 5%
+ discount from the original fees
+• Final total fees will also include the following
+1. School Levy is 10% of original fees
+2. Sports fee is 5% of the original fees.
+Write a program the calculates the final total fees to be paid.
+Program must request user to enter original fees value greater then R50 000.
+Program should also request user to enter amount to deposit before calculating
+final total fees.*/
+import java.sql.SQLOutput;
+import java.util.Scanner;
+public class GLA {
+        int original_fees;
+        int deposit_fees;
+        int final_fees;
+        int levy;
+        int sport_fees , discount , total;
+
+    void display(){
+        if(deposit_fees < original_fees/2){
+              discount = (original_fees *5) /100;
+        }
+        else{
+             discount = original_fees;
+        }
+         levy = (original_fees *10) /100;
+         sport_fees = (original_fees *5) /100;
+         total =  levy+sport_fees+discount;
+         System.out.println(total);
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        GLA obj = new GLA();
+        System.out.println("Enter original fees and enter fees more than 50000 rs.");
+        obj.original_fees = sc.nextInt();
+        System.out.println("enter deposit fees= ");
+        obj.deposit_fees = sc.nextInt();
+        obj.display();
+
+    }
+}
